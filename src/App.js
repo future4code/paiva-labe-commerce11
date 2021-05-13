@@ -12,9 +12,10 @@ const Container = styled.div`
   display: flex;
   flex-direction:column;
   height: 100vh;
+  box-sizing: border-box;
 `
 
-const Header = styled.div`
+const ContainerHeader = styled.div`
   background-color: lightblue;
   height: 60px;
 `
@@ -49,11 +50,6 @@ const ContainerCarrinho = styled.div`
 const ContainerFooter = styled.div`
   background-color: lightblue;
   height: 120px;
-`
-
-const ContainerOrdenacao = styled.div`
-  background-color: lightgreen;
-  height: 40px;
 `
 
 export default class App extends React.Component {
@@ -124,19 +120,26 @@ export default class App extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
+        <ContainerHeader>
           Aqui entra o Header
-        </Header>
+        </ContainerHeader>
         <ContainerProdutos>
           <ContainerFiltro>
-            Aqui vai ficar o filtro
+
+            <Filtro />
+
           </ContainerFiltro>
           <ContainerLoja>
-            <ContainerOrdenacao>Aqui vai ficar a ordenação</ContainerOrdenacao>
-            <div>Aqui vai ficar os produtos</div>
+            <div>
+
+              <Produtos />
+
+            </div>
           </ContainerLoja>
           <ContainerCarrinho>
-            Aqui vai ficar o carrinho
+
+            <Carrinho />
+
           </ContainerCarrinho>
         </ContainerProdutos>
         <ContainerFooter>
