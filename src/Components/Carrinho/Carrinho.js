@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const ContainerCarrinho = styled.div`
-    width: 20vw;
+    /* width: 20vw; */
     min-height: 100vh;
     padding: 10px;
 `
