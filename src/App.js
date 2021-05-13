@@ -1,4 +1,11 @@
 import React from 'react';
+import './App.css';
+import Styled from 'styled-components';
+import Header from './Components/Header/Header'
+import Filtro from './Components/Filtro/Filtro';
+import Produtos from './Components/Produtos/Produtos';
+import Carrinho from './Components/Carrinho/Carrinho';
+import Footer from './Components/Footer/Footer'
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -140,4 +147,5 @@ export default class App extends React.Component {
   }
 
 }
+
 
