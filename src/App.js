@@ -8,10 +8,11 @@ import Carrinho from './Components/Carrinho/Carrinho';
 import Footer from './Components/Footer/Footer'
 import styled from 'styled-components';
 
+
 const Container = styled.div`
   display: flex;
   flex-direction:column;
-  height: 100vh;
+  /* height: 100vh; */
   box-sizing: border-box;
 `
 
@@ -22,7 +23,7 @@ const ContainerHeader = styled.div`
 
 const ContainerProdutos = styled.div`
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   flex-direction: row;
 `
 
@@ -50,6 +51,31 @@ const ContainerCarrinho = styled.div`
 const ContainerFooter = styled.div`
   background-color: lightblue;
   height: 120px;
+`
+
+const CardContainer = styled.div`
+    width: 200px;
+    border: 1px solid black;
+    height: 260px;  
+    display:flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 5px;
+    padding: 0 5px;
+    img{
+        max-width:80%;
+        align-self: center;
+    }
+    p{
+      margin: 5px;
+    }
+`
+
+const ContainerProduto = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `
 
 export default class App extends React.Component {
@@ -114,10 +140,95 @@ export default class App extends React.Component {
         name: "Moletom Galáxia",
         value: 200.00,
         imagem: 'https://img.elo7.com.br/product/zoom/30FC22C/blusa-galaxias-cosmos-cores-estrelas-espaco-moletom-galaxias.jpg'
-      }
-    ]
+      },
+    ],
+    ValorMinimo: '',
+    ValorMaximo: '',
+    NomeProduto: '',
+    ordenacao: '',
   }
+
+  onChangeValorMinimo = (event) => {
+    this.setState({
+      ValorMinimo: event.target.value
+    })
+  }
+
+  onChangeValorMaximo = (event) => {
+    this.setState({
+      ValorMaximo: event.target.value
+    })
+  }
+
+  onChangeNomeProduto = (event) => {
+    this.setState({
+      NomeProduto: event.target.value
+    })
+  }
+
+  onChangeOrdenacao = (event) => {
+    this.setState({
+      ordenacao: event.target.value
+    })
+  }
+
+  // ordenaFiltro = () => {
+  //   let valorMin
+  //   let valorMax
+  //   if (this.state.valorMinimo != "") {
+  //     valorMin = this.state.valorMinimo
+  //   } else { valorMin = -Infinity }
+
+  //   if (this.state.valorMaximo != "") {
+  //     valorMax = this.state.valorMaximo
+  //   } else { valorMax = Infinity }
+
+  //   return this.state.produtos
+  //     .filter(produto => produto.value >= valorMin)
+  //     .filter(produto => produto.value <= valorMax)
+  //     .filter(produto => produto.name.includes(this.state.nomeProduto))
+  // }
+
   render() {
+
+    // const produtosFiltrados = this.ordenaFiltro().map((produto) => {
+    //   return (
+    //     <CardContainer>
+    //       <img src={produto.imagem} alt="Imagem Produto" />
+    //       <p>{produto.name}</p>
+    //       <p>R${produto.value}</p>
+    //       <button onClick={null}>Adicionar ao Carrinho</button>
+    //     </CardContainer>
+    //   )
+    // })
+    // const produtosFiltrados = this.state.produtos.filter((produto) => {
+    //   if (this.state.valorMaximo === "" && this.state.valorMinimo === '' && this.state.nomeProduto === '') {
+    //     return true
+    //   }
+    // })
+
+    // let listaProdutos = produtosFiltrados.map((produto) => {
+    //   return (
+    //           <CardContainer>
+    //             <img src={produto.imagem} alt="Imagem Produto" />
+    //             <p>{produto.name}</p>
+    //             <p>R${produto.value}</p>
+    //             <button onClick={null}>Adicionar ao Carrinho</button>
+    //           </CardContainer>
+    //         )
+    // })
+
+    let listaProdutos = this.state.produtos.map((produto) => {
+      return (
+              <CardContainer>
+                <img src={produto.imagem} alt="Imagem Produto" />
+                <p>{produto.name}</p>
+                <p>R${produto.value}</p>
+                <button onClick={null}>Adicionar ao Carrinho</button>
+              </CardContainer>
+            )
+    })
+
     return (
       <Container>
         <ContainerHeader>
@@ -126,15 +237,28 @@ export default class App extends React.Component {
         <ContainerProdutos>
           <ContainerFiltro>
 
-            <Filtro />
+            <Filtro
+              // lista={produtosFiltrados}
+              valorMinimo={this.state.valorMinimo}
+              valorMaximo={this.state.valorMaximo}
+              nomeProduto={this.state.nomeProduto}
+              onChangeValorMaximo={this.onChangeValorMaximo}
+              onChangeValorMinimo={this.onChangeValorMinimo}
+              onChangeNomeProduto={this.onChangeNomeProduto}
+            />
 
           </ContainerFiltro>
           <ContainerLoja>
-            <div>
 
-              <Produtos />
+            <Produtos
+              ordenacao={this.state.ordenacao}
+              nomeProduto={this.state.produtos.name}
+            />
 
-            </div>
+            <ContainerProduto>
+              {listaProdutos}
+            </ContainerProduto>
+
           </ContainerLoja>
           <ContainerCarrinho>
 
@@ -150,5 +274,3 @@ export default class App extends React.Component {
   }
 
 }
-
-
