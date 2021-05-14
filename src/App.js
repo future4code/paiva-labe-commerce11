@@ -85,60 +85,70 @@ export default class App extends React.Component {
         id: 1,
         name: 'Camisa Astronauta na Lua',
         value: 65.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/astronauta-7-marinho1-044c5b932931d3cb4715274607800511-640-0.png'
       },
       {
         id: 2,
         name: 'Camisa Crew Dragon',
         value: 70.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/crew1-c1fedacde9b3b7436315514752668614-640-0.png'
       },
       {
         id: 3,
         name: 'Camisa Marte',
         value: 45.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/mars-preta-0e38c87a093ada7be915254882378647-640-0.png'
       },
       {
         id: 4,
         name: "Camisa Don't Panic!",
         value: 92.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/dontpanic-marinho1-ed3ba4ec83983d65e215488117487520-640-0.png'
       },
       {
         id: 5,
         name: "Camisa Starship",
         value: 92.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/starship-mescla11-fe3af323b44b4fb98e15482331906672-640-0.png'
       },
       {
         id: 6,
         name: "Camisa Apolo 15",
         value: 100.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/branco41-43dd7cf0f797bea24416179975983654-640-0.jpg'
       },
       {
         id: 7,
         name: "Camisa Nasa",
         value: 55.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/preto21-40bc010c36902dedfb16179955713940-640-0.jpg'
       },
       {
         id: 8,
         name: "Moletom SpaceX",
         value: 150.00,
+        Quantidade: 0,
         imagem: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/726/919/products/mescla-spaceex1-5b842b23f17cf0b5e515908462346917-640-0.jpg'
       },
       {
         id: 9,
         name: "Moletom Astronauta",
         value: 180.00,
+        Quantidade: 0,
         imagem: 'https://www.usecamisetas.com/media/product/f9a/moletom-com-capuz-astronauta-espaco-b76.jpg'
       },
       {
         id: 10,
         name: "Moletom Galáxia",
         value: 200.00,
+        Quantidade: 0,
         imagem: 'https://img.elo7.com.br/product/zoom/30FC22C/blusa-galaxias-cosmos-cores-estrelas-espaco-moletom-galaxias.jpg'
       },
     ],
@@ -146,6 +156,8 @@ export default class App extends React.Component {
     ValorMaximo: '',
     NomeProduto: '',
     ordenacao: '',
+    carrinho: [],
+    totalProdutos: 0,
   }
 
   onChangeValorMinimo = (event) => {
