@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import CardProduto from './CardProduto/CardProduto'
 
 
 const ContainerProduto = styled.div`
     width: 55vw;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -30,7 +29,7 @@ export default class Produtos extends Component {
                 <HeaderProduto>
                     <span>Quantidade de produtos: {null}</span>
                     <label>Ordenação: 
-                        <select onChange={null}>
+                        <select onChange={this.props.ordenacao}>
                             <option value="crescente">Crescente</option>
                             <option value="decrescente">Decrescente</option>
                         </select>
@@ -38,7 +37,6 @@ export default class Produtos extends Component {
                     
                     
                 </HeaderProduto>
-                <CardProduto/>
 
             </ContainerProduto>
         )
