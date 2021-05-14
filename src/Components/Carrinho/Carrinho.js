@@ -38,6 +38,21 @@ export default class Carrinho extends Component {
             let item = listaProdutos[i];
             soma += item.value*item.Quantidade;
         }
+        this.setState({totalProdutos: soma});
+    }
+
+    removeProduto(produtoId){
+        var novoCarrinho = this.state.carrinho;
+        let jaExiste = false;
+        for (let i = 0; i < novoCarrinho.length; i++){
+            if (produtoId === novoCarrinho[i].id){
+                jaExiste = true;
+            }if (novoCarrinho[i].Quantidade > 1){
+                novoCarrinho[i].Quantidade -= 1;
+            }else {
+                novoCarrinho.splice(i, 1);
+            }
+        }
     }
 
 
