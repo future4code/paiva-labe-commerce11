@@ -27,10 +27,23 @@ export default class Carrinho extends Component {
                 this.state.produtos.find((produto) => {
                     return produto.id === produtoId ? produto : false;
                 })
-            )
+            );
+        }
+    
+    }
+
+    somaProduto(listaProdutos) {
+        let soma = 0;
+        for (let i = 0; i < listaProdutos.length; i++){
+            let item = listaProdutos[i];
+            soma += item.value*item.Quantidade;
         }
     }
+
+
     
+
+
     
     render() {
 
