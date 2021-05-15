@@ -129,110 +129,33 @@ const produtos = [
 
 export default class App extends React.Component {
   state = {
-    valorMinimo: 0,
-    valorMaximo: Infinity,
+    valorMinimo: '',
+    valorMaximo: '',
     nomeProduto: '',
-    ordenacao: '',
     carrinho: [],
     totalProdutos: 0,
   }
 
   onChangeValorMinimo = (event) => {
     this.setState({
-      ValorMinimo: event.target.value
+      valorMinimo: event.target.value
     })
-    // var minimo = this.state.valorMinimo
-    // let existe = false
-
-    // for (let i = 0; i < minimo.length; i++) {
-    //   if (minimo === 2) {
-    //     console.log('2')
-    //   }
-      
-    // }
   }
 
   onChangeValorMaximo = (event) => {
     this.setState({
-      ValorMaximo: event.target.value
+      valorMaximo: event.target.value
     })
   }
 
   onChangeNomeProduto = (event) => {
     this.setState({
-      NomeProduto: event.target.value
+      nomeProduto: event.target.value
     })
   }
 
-  onChangeOrdenacao = (event) => {
-    this.setState({
-      ordenacao: event.target.value
-    })
-  }
-
-  // ordenaFiltro = () => {
-  //   let valorMin
-  //   let valorMax
-  //   if (this.state.valorMinimo != "") {
-  //     valorMin = this.state.valorMinimo
-  //   } else { valorMin = -Infinity }
-
-  //   if (this.state.valorMaximo != "") {
-  //     valorMax = this.state.valorMaximo
-  //   } else { valorMax = Infinity }
-
-  //   return this.state.produtos
-  //     .filter(produto => produto.value >= valorMin)
-  //     .filter(produto => produto.value <= valorMax)
-  //     .filter(produto => produto.name.includes(this.state.nomeProduto))
-  // }
 
   render() {
-
-    // const produtosFiltrados = this.ordenaFiltro().map((produto) => {
-    //   return (
-    //     <CardContainer>
-    //       <img src={produto.imagem} alt="Imagem Produto" />
-    //       <p>{produto.name}</p>
-    //       <p>R${produto.value}</p>
-    //       <button onClick={null}>Adicionar ao Carrinho</button>
-    //     </CardContainer>
-    //   )
-    // })
-    // const produtosFiltrados = this.state.produtos.filter((produto) => {
-    //   if (produto.value >= this.state.valorMinimo && produto.value <= this.state.valorMaximo && produto.value.includes(this.state.nomeProduto)) {
-    //     return true
-    //   }
-    // })
-
-    // let listaProdutos = produtosFiltrados.map((produto) => {
-    //   return (
-    //           <CardContainer>
-    //             <img src={produto.imagem} alt="Imagem Produto" />
-    //             <p>{produto.name}</p>
-    //             <p>R${produto.value}</p>
-    //             <button onClick={null}>Adicionar ao Carrinho</button>
-    //           </CardContainer>
-    //         )
-    // })
-
-    // let listaProdutos = this.state.produtos.map((produto) => {
-    //   return (
-    //           <CardContainer>
-    //             <img src={produto.imagem} alt="Imagem Produto" />
-    //             <p>{produto.name}</p>
-    //             <p>R${produto.value}</p>
-    //             <button onClick={null}>Adicionar ao Carrinho</button>
-    //           </CardContainer>
-    //         )
-    // })
-
-    // const listaProdutos = this.state.produtos.map((produto) => {
-    //   if (this.state.valorMaximo === 10) {
-    //     return console.log('retornou vazio')
-    //   }
-    // })
-
     return (
       <Container>
         <ContainerHeader>
@@ -254,7 +177,12 @@ export default class App extends React.Component {
           </ContainerFiltro>
           <ContainerLoja>
 
-            <Produtos produtos={produtos}/>
+            <Produtos
+              produtos={produtos}
+              valorMinimo={this.state.valorMinimo}
+              valorMaximo={this.state.valorMaximo}
+              nomeProduto={this.state.nomeProduto}
+            />
 
           </ContainerLoja>
           <ContainerCarrinho>
