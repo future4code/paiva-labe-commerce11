@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const ContainerFiltro = styled.div`
-    width: 20vw;
+    width: 80%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -13,30 +13,35 @@ const ContainerFiltro = styled.div`
 
 export default class Filtro extends React.Component {
 
-    // let listaFiltrada = props.listaProdutos.filter((produto) => {
-    //     if (produto.value > valorMinimo) {
-    //         return true
-    //     } else {
-            
-    //     }
-    // })
-    render(){
+    render() {
         return (
             <ContainerFiltro>
                 <h2>Filtros:</h2>
-    
-                <label>Valor Mínimo:</label>
-                <input type="number" onChange={this.props.onChangeValorMinimo} />
-    
-                <label>Valor Máximo:</label>
-                <input type="number" onChange={this.props.onChangeValorMaximo} />
-    
-                <label>Busca do Produto:</label>
-                <input type="text" onChange={this.props.onChangeNomeProduto} />
 
-    
+                <label>Valor Mínimo:</label>
+                <input
+                    type="number"
+                    value={this.props.valorMinimo}
+                    onChange={this.props.onChangeValorMinimo}
+                />
+
+                <label>Valor Máximo:</label>
+                <input
+                    type="number"
+                    value={this.props.valorMaximo}
+                    onChange={this.props.onChangeValorMaximo}
+                />
+
+                <label>Busca do Produto:</label>
+                <input
+                    type="text"
+                    value={this.props.nomeProduto}
+                    onChange={this.props.onChangeNomeProduto}
+                />
+
+
             </ContainerFiltro>
         )
     }
-    
+
 }
