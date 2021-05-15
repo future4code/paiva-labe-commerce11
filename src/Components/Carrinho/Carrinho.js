@@ -9,7 +9,6 @@ const ContainerCarrinho = styled.div`
 `;
 
 export default class Carrinho extends Component {
-  
   componentDidMount(){
       const localCarrinho = JSON.parse(
         localStorage.getItem("carrinho de Produto")          

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const CardContainer =  styled.div`
+const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -15,18 +15,35 @@ const CardContainer =  styled.div`
         width: 100%;
         justify-self: center;
     }
+
+    p {
+        margin: 6px;
+    }
 `
 
-export default class ProductsCard extends React.Component{
-    render(){
-        return(
+const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+const Botao = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+
+export default class ProductsCard extends React.Component {
+    render() {
+        return (
             <CardContainer>
-                <img src={this.props.imagem}/>
-                <div>
+                <img src={this.props.imagem} alt={''}/>
+                <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>
                     <button onClick={addProduto}>Adicionar ao Carrinho</button>
                 </div>
+                </InfoContainer>
             </CardContainer>
         )
     }

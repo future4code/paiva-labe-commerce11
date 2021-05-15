@@ -129,38 +129,30 @@ const produtos = [
 
 export default class App extends React.Component {
   state = {
-    valorMinimo: 0,
-    valorMaximo: Infinity,
+    valorMinimo: '',
+    valorMaximo: '',
     nomeProduto: '',
-    ordenacao: '',
     carrinho: [],
     totalProdutos: 0,
   }
 
   onChangeValorMinimo = (event) => {
     this.setState({
-      ValorMinimo: event.target.value
+      valorMinimo: event.target.value
     })
   }
 
   onChangeValorMaximo = (event) => {
     this.setState({
-      ValorMaximo: event.target.value
+      valorMaximo: event.target.value
     })
   }
 
   onChangeNomeProduto = (event) => {
     this.setState({
-      NomeProduto: event.target.value
+      nomeProduto: event.target.value
     })
   }
-
-  onChangeOrdenacao = (event) => {
-    this.setState({
-      ordenacao: event.target.value
-    })
-  }
-
   // FUNÇÃO DE AICIONAR AO CARRINHO \\
 
 
@@ -188,9 +180,6 @@ export default class App extends React.Component {
     this.somaProduto(novoCarrinho);
   }
 
-
-
-
   render() {
     return (
       <Container>
@@ -213,7 +202,12 @@ export default class App extends React.Component {
           </ContainerFiltro>
           <ContainerLoja>
 
-            <Produtos produtos={produtos} addProduto={addProduto}/>
+            <Produtos
+              produtos={produtos}
+              valorMinimo={this.state.valorMinimo}
+              valorMaximo={this.state.valorMaximo}
+              nomeProduto={this.state.nomeProduto}
+            />
 
           </ContainerLoja>
           <ContainerCarrinho>
