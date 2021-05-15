@@ -73,6 +73,7 @@ export default class Produtos extends Component {
                         />
                     })}
                 </ContainerCardProduto>
+                
 
             </ContainerProduto>
         )

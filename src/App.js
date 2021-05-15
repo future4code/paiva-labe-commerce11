@@ -153,7 +153,32 @@ export default class App extends React.Component {
       nomeProduto: event.target.value
     })
   }
+  // FUNÇÃO DE AICIONAR AO CARRINHO \\
 
+
+
+  addProduto(produtoId) {
+    var novoCarrinho = this.state.carrinho;
+    let jaExiste = false;
+
+    for (let i = 0; novoCarrinho.length; i++) {
+      if (produtoId === novoCarrinho[i].id) {
+        jaExiste = true;
+        novoCarrinho[i].Quantidade += 1;
+      }
+    }
+    if (!jaExiste) {
+      novoCarrinho.push(
+        this.state.produtos.find((produto) => {
+          return produto.id === produtoId ? produto : false;
+        })
+      );
+    }
+
+    this.setState({carrinho: novoCarrinho});
+    localStorage.setState("carrio de Produto", JSON.stringify(novoCarrinho));
+    this.somaProduto(novoCarrinho);
+  }
 
   render() {
     return (
