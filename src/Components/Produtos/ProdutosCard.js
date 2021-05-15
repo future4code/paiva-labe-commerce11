@@ -41,8 +41,7 @@ export default class ProductsCard extends React.Component {
                 <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>
-                    <button onClick={addProduto}>Adicionar ao Carrinho</button>
-                </div>
+                    <button onClick={ () => this.props.addProdutoAoCarrinho(this.props.id)}>Adicionar ao Carrinho</button>
                 </InfoContainer>
             </CardContainer>
         )
