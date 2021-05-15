@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
     return (
         <Container>
-
+          Footer Aqui
         </Container>
     );
   }
