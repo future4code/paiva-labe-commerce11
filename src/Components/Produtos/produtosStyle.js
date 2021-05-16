@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export const ContainerProduto = styled.div`
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20px;
 `
 
 export const HeaderProduto = styled.div`
@@ -19,6 +20,12 @@ export const ContainerCardProduto = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
+  width: 100%;
+
+  @media(max-width: 600px){
+    grid-template-columns: 1fr;
+  }
+
 `
 
 // Component ProdutosCard
@@ -26,11 +33,15 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 1px #DCDCDC solid;
+    box-shadow: 2px 2px 2px 2px #DCDCDC;
     width: 200px;
     justify-content: center;
     padding: 10px;
     margin: 10px 20px;
+
+    @media(max-width: 600px){
+    justify-self: center;
+  }
 
     :hover {
         background-color: #F7F7F7
@@ -73,3 +84,4 @@ export const InfoContainer = styled.div`
         margin-right: 5px;
     }
 `
+
