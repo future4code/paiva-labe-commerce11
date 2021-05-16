@@ -27,11 +27,6 @@ const InfoContainer = styled.div`
     justify-content: space-between;
 `
 
-const Botao = styled.div`
-    display: flex;
-    justify-content: center;
-`
-
 
 export default class ProductsCard extends React.Component {
     render() {
@@ -41,7 +36,7 @@ export default class ProductsCard extends React.Component {
                 <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>
-                    <button onClick={ () => this.props.addProdutoAoCarrinho(this.props.id)}>Adicionar ao Carrinho</button>
+                    <button onClick={ () => this.props.addProdutoAoCarrinho(this.props.id)}>Adiciona ao Carrinho</button>
                 </InfoContainer>
             </CardContainer>
         )

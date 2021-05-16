@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Produtos from "../Produtos/Produtos";
 
 const ContainerCarrinho = styled.div`
   width: 20vw;
@@ -8,15 +7,27 @@ const ContainerCarrinho = styled.div`
   padding: 10px;
 `;
 
-export default class Carrinho extends Component {
-  
-  render() {
-    return (
-      <ContainerCarrinho>
-        <h2>Carrinho:</h2>
 
-        <p>Valor Total: {() => this.props.somaProduto}</p>
-      </ContainerCarrinho>
-    );
-  }
+export default function Carrinho(props) {
+  console.log('jaja',props.produtosCarrinho)
+  let carrinho = props.produtosCarrinho
+  let total = 0
+  
+  carrinho.map((produto) => {
+    total += produto.quantidade * produto.value
+  })
+  return (
+    <ContainerCarrinho>
+      {carrinho.map((produto) => (
+        <div>Item: {produto.name} 
+        <p>Qtd: {produto.quantidade}</p>
+        <p>Preço: R${produto.value}</p>
+        <button onClick={ () => props.removeProduto(produto.id)}>x</button>
+
+        </div>
+      ))}
+        <p>Total: R${total}</p>
+    </ContainerCarrinho>
+  )
 }
+
