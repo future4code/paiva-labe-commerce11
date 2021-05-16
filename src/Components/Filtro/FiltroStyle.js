@@ -10,6 +10,8 @@
     input {
         border: 1px solid #DCDCDC;
         margin-bottom: 10px;
+        padding: 6px;
+        border-radius: 10px;
     }
 
     img {
