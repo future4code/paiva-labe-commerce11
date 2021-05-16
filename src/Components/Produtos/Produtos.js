@@ -51,9 +51,13 @@ export default class Produtos extends Component {
                         imagem={produtos.imagem}
                         nome={produtos.name}
                         valor={produtos.value}
+                        id = {produtos.id}
+                        addProdutoAoCarrinho = {this.props.addProdutoAoCarrinho}
+                        somaProduto = {this.props.somaProduto}
                         />
                     })}
                 </ContainerCardProduto>
+
                 
 
             </ContainerProduto>
