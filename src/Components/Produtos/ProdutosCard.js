@@ -1,13 +1,13 @@
 import React from 'react'
 import IconeCarrinho from './img/shopping-cart-white.svg'
-import {CardContainer, InfoContainer} from './produtosStyle'
+import {CardContainer, InfoContainer, FotoProduto} from './produtosStyle'
 
 
 export default class ProductsCard extends React.Component {
     render() {
         return (
             <CardContainer>
-                <img src={this.props.imagem} alt={''}/>
+                <FotoProduto src={this.props.imagem} alt={''}/>
                 <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>

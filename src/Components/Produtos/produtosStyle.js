@@ -5,7 +5,6 @@ import styled from 'styled-components'
 export const ContainerProduto = styled.div`
     display: flex;
     flex-wrap: wrap;
-    
 `
 
 export const HeaderProduto = styled.div`
@@ -33,14 +32,20 @@ export const CardContainer = styled.div`
     padding: 10px;
     margin: 10px 20px;
 
-    img {
-        width: 100%;
-        justify-self: center;
+    :hover {
+        background-color: #F7F7F7
     }
+    
 
     p {
         margin: 6px;
     }
+`
+
+export const FotoProduto = styled.img`
+    width: 100%;
+    justify-self: center;
+    background-color: white;
 `
 
 export const InfoContainer = styled.div`
