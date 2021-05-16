@@ -1,58 +1,10 @@
 import React from 'react';
-import './App.css';
 import Header from './Components/Header/Header'
 import Filtro from './Components/Filtro/Filtro';
 import Produtos from './Components/Produtos/Produtos';
 import Carrinho from './Components/Carrinho/Carrinho';
 import Footer from './Components/Footer/Footer'
-import styled from 'styled-components';
-
-
-const Container = styled.div`
-  display: flex;
-  flex-direction:column;
-  /* height: 100vh; */
-  box-sizing: border-box;
-`
-
-const ContainerHeader = styled.div`
-  background-color: lightblue;
-  height: 60px;
-`
-
-const ContainerProdutos = styled.div`
-  display: flex;
-  /* height: 100vh; */
-  flex-direction: row;
-`
-
-const ContainerFiltro = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: lightcoral;
-  width: 20%;
-`
-
-const ContainerLoja = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: lightcyan;
-  width: 60%;
-`
-
-const ContainerCarrinho = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: lightgray;
-  width: 20%;
-`
-
-const ContainerFooter = styled.div`
-  background-color: lightblue;
-  height: 120px;
-`
-
-
+import {Container, ContainerHeader, ContainerProdutos, ContainerFiltro, ContainerLoja, ContainerCarrinho, ContainerFooter} from './AppStyle'
 
 const produtos = [
   {

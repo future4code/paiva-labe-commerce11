@@ -28,15 +28,17 @@ const InfoContainer = styled.div`
 `
 
 
+
 export default class ProductsCard extends React.Component {
     render() {
         return (
             <CardContainer>
-                <img src={this.props.imagem} alt={''}/>
+                <FotoProduto src={this.props.imagem} alt={''}/>
                 <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>
                     <button onClick={ () => this.props.addProdutoAoCarrinho(this.props.id)}>Adiciona ao Carrinho</button>
+
                 </InfoContainer>
             </CardContainer>
         )

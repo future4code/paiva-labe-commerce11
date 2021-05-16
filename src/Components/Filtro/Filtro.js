@@ -1,14 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const ContainerFiltro = styled.div`
-    width: 80%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-`
-
+import {ContainerFiltro} from './FiltroStyle'
 
 
 export default class Filtro extends React.Component {
@@ -16,7 +7,7 @@ export default class Filtro extends React.Component {
     render() {
         return (
             <ContainerFiltro>
-                <h2>Filtros:</h2>
+                <h2>Filtros <img src={'https://image.flaticon.com/icons/png/512/167/167797.png'} alt={'filtar'}/> </h2>
 
                 <label>Valor Mínimo:</label>
                 <input

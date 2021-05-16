@@ -1,11 +1,8 @@
 import React, { Component } from "react";
+
 import styled from "styled-components";
 
-const ContainerCarrinho = styled.div`
-  width: 20vw;
-  min-height: 100vh;
-  padding: 10px;
-`;
+
 
 
 export default function Carrinho(props) {
@@ -29,5 +26,12 @@ export default function Carrinho(props) {
         <p>Total: R${total}</p>
     </ContainerCarrinho>
   )
+
+
+        <p>Valor Total: {null}</p>
+      </ContainerCarrinho>
+    );
+  }
+
 }
 

@@ -1,26 +1,7 @@
 import React, { Component } from 'react'
-import styled from "styled-components"
 import ProdutosCard from './ProdutosCard'
+import {ContainerProduto, HeaderProduto, ContainerCardProduto} from './produtosStyle'
 
-const ContainerProduto = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    
-`
-
-const HeaderProduto = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 20px;
-    margin: 10px 20px 30px 20px;
-`
-
-const ContainerCardProduto = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-`
 
 export default class Produtos extends Component {
     state ={
