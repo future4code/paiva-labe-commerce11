@@ -33,7 +33,7 @@ export default class ProductsCard extends React.Component {
     render() {
         return (
             <CardContainer>
-                <FotoProduto src={this.props.imagem} alt={''}/>
+                <img src={this.props.imagem} alt={''}/>
                 <InfoContainer>
                     <p>{this.props.nome}</p>
                     <p>R$ {this.props.valor}</p>
