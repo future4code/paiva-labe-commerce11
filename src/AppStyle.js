@@ -64,7 +64,7 @@ export const ContainerCarrinho = styled.div`
 
 export const ContainerFooter = styled.div`
   background-color: lightblue;
-  height: 120px;
+  height: 170px;
 
   @media(max-width: 600px){
     width: 100%;
