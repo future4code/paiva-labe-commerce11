@@ -22,6 +22,7 @@ export const ContainerSAC = styled.div`
       width: 95%;
   }
 
+
   ul{
     list-style-type: none;
     padding: 0;
