@@ -13,7 +13,7 @@ export const ContainerCarrinho = styled.div`
   }
 
   img {
-    width: 16px;
+    width: 18px;
   }
 `
 

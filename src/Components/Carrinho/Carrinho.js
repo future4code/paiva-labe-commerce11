@@ -11,7 +11,7 @@ export default function Carrinho(props) {
   })
   return (
     <ContainerCarrinho>
-      <h3>Carrinho <img src={'https://image.flaticon.com/icons/png/512/126/126142.png'} alt={'icone carrinho'} /></h3>
+      <h2>Carrinho <img src={'https://image.flaticon.com/icons/png/512/126/126142.png'} alt={'icone carrinho'} /></h2>
       <ContainerCard>
         {carrinho.map((produto) => (
           <CardCarrinho>

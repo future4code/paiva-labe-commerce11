@@ -23,6 +23,7 @@ export const ContainerInput = styled.div`
         margin-bottom: 10px;
         padding: 6px;
         border-radius: 10px;
+        outline: 0;
 
 
         @media(max-width: 600px){
