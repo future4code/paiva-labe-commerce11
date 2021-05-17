@@ -1,31 +1,22 @@
 import React from 'react'
-import styled from 'styled-components'
-
-
-const Container = styled.div`
-`
-const ContainerLogo = styled.div`
-
-`
-
-const SessaoLoja = styled.div`
-`
+import Logo from './img/LogoMarca.png'
+import {Container, ContainerLogo, SessaoLoja} from './HeaderStyle'
 
 
 export default class Header extends React.Component {
   render() {
     return (
-        <Container>
-          <ContainerLogo>
-          <imagem src={null}/>
-          </ContainerLogo>
+      <Container>
+        <ContainerLogo>
+          <img src={Logo} alt={'logo'} />
+        </ContainerLogo>
         <SessaoLoja>
-            <a href="#Novidades">Novidades</a>
-            <a href="#Marcas">Marcas</a>
-            <a href="#Outlet">Outlet</a>
+          <a href="#Novidades">Novidades</a>
+          <a href="#Marcas">Marcas</a>
+          <a href="#Outlet">Outlet</a>
         </SessaoLoja>
 
-        </Container>
+      </Container>
     );
   }
 }

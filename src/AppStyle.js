@@ -12,11 +12,11 @@ export const Container = styled.div`
 `
 
 export const ContainerHeader = styled.div`
-  background-color: lightblue;
-  height: 60px;
+  height: 120px;
 
   @media(max-width: 600px){
     width: 100%;
+    height: 200px;
   }
 
 `
@@ -24,6 +24,8 @@ export const ContainerHeader = styled.div`
 export const ContainerProdutos = styled.div`
   display: flex;
   background-color: #fff;
+  border-top: 1px solid #DCDCDC;
+  padding-top: 10px;
   flex-direction: row;
 
   @media(max-width: 600px){
