@@ -8,12 +8,20 @@ export const ContainerFooter = styled.div`
   background-color: #4136cc;
   color: white;
   padding: 10px 0;
+
+  @media(max-width: 600px){
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContainerSAC = styled.div`
   display:flex;
   flex-direction: column;
 
+  @media(max-width: 600px){
+      width: 95%;
+  }
+
   ul{
     list-style-type: none;
     padding: 0;
@@ -24,25 +32,30 @@ export const ContainerSAC = styled.div`
     }
 `;
 
-export const ContainerContato = styled.div`display:flex;
-  flex-direction: column;
+export const ContainerContato = styled.div`
+    display:flex;
+    flex-direction: column;
 
-  ul{
-    list-style-type: none;
-    padding: 0;
-
-    p{
-      margin: 0;
-      display: flex;
+    @media(max-width: 600px){
+        width: 95%;
     }
 
-    img {
-      width: 16px;
-      padding-right: 5px;
-    }
-    a {
-      text-decoration: none;
-      color: white;
-      }
-    }
+    ul{
+        list-style-type: none;
+        padding: 0;
+
+        p{
+        margin: 0;
+        display: flex;
+        }
+
+        img {
+        width: 16px;
+        padding-right: 5px;
+        }
+        a {
+        text-decoration: none;
+        color: white;
+        }
+        }
 `;
